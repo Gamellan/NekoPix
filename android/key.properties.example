@@ -1,0 +1,6 @@
+# Copy this file to android/key.properties and fill with your own values.
+# Do NOT commit android/key.properties to git.
+storePassword=CHANGE_ME
+keyPassword=CHANGE_ME
+keyAlias=waifupix
+storeFile=waifupix-upload-keystore.jks
