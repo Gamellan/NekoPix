@@ -2,6 +2,28 @@
 
 Este documento resume TODO lo que debes cambiar/verificar antes de publicar NekoPix.
 
+## Pendientes (operativa + monetizacion)
+
+- [ ] Definir package final (reemplazar `com.yourname.nekopix` por el definitivo).
+- [ ] Crear App en AdMob con ese package final.
+- [ ] Crear y configurar IDs reales de AdMob:
+  - [ ] App ID
+  - [ ] Banner Ad Unit ID
+  - [ ] Interstitial Ad Unit ID
+- [ ] Reemplazar IDs de AdMob en:
+  - [ ] `lib/core/constants/app_constants.dart`
+  - [ ] `android/app/src/main/AndroidManifest.xml`
+- [ ] Generar keystore de release y completar `android/key.properties`.
+- [ ] Generar build firmada (`.aab`) y validar en dispositivo real.
+- [ ] Configurar Play Console (ficha, contenido, clasificacion, Data safety, politica de privacidad).
+- [ ] Verificar anuncios en release (no solo debug/test ads) para monetizacion real.
+- [ ] Publicar primera version en track interno/cerrado y revisar metricas (crash, fill rate, eCPM).
+
+## Estado repositorios
+
+- [x] WaifuPix revertido en GitHub (se deshicieron los cambios accidentales de NekoPix).
+- [x] Repositorio nuevo creado para NekoPix: https://github.com/Gamellan/NekoPix
+
 ## 1) Identidad de app
 
 Estado actual:
