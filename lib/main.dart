@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/services.dart';
@@ -12,7 +14,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Initialize AdMob
-  await MobileAds.instance.initialize();
+  unawaited(_initializeAdsSafely());
 
   // Lock to portrait orientation (phone wallpaper app)
   await SystemChrome.setPreferredOrientations([
@@ -31,6 +33,12 @@ void main() async {
   );
 
   runApp(const ProviderScope(child: NekoPixApp()));
+}
+
+Future<void> _initializeAdsSafely() async {
+  try {
+    await MobileAds.instance.initialize();
+  } catch (_) {}
 }
 
 class NekoPixApp extends StatelessWidget {
